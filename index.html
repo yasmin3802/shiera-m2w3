@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Taskly - A modern and simple todo list to organize your tasks and stay productive.">
+
+    <title>Taskly | Smart Todo List</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Decorative background shapes -->
+    <div class="background-shape shape-pink"></div>
+    <div class="background-shape shape-blue"></div>
+    <div class="background-shape shape-purple"></div>
+
+    <main class="app-container">
+
+        <!-- HEADER -->
+        <header class="app-header">
+
+            <div class="brand">
+
+                <div class="brand-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14 3H6C4.89543 3 4 3.89543 4 5V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V9L14 3Z"
+                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+
+                        <path d="M14 3V9H20" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+
+                        <path d="M8 14H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+
+                        <path d="M8 17H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+
+                        <path d="M17.8 4.2L19.8 6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+
+                        <path d="M16.8 5.2L19.8 8.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="brand-text">
+                    <h1>Taskly</h1>
+                    <p>Plan it. Do it. Feel accomplished.</p>
+                </div>
+
+            </div>
+
+            <div class="header-date">
+                <span class="date-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.7" />
+
+                        <path d="M16 3V7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+
+                        <path d="M8 3V7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+
+                        <path d="M3 10H21" stroke="currentColor" stroke-width="1.7" />
+                    </svg>
+                </span>
+
+                <span id="current-date">Today</span>
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <span class="welcome-label">
+                    <span class="sparkle-icon" aria-hidden="true">✦</span>
+                    Your productivity space
+                </span>
+
+                <h2>
+                    Turn your plans
+                    <span>into progress.</span>
+                </h2>
+
+                <p>
+                    Keep your tasks organized, stay focused, and celebrate
+                    every little accomplishment.
+                </p>
+
+            </div>
+
+            <div class="welcome-illustration" aria-hidden="true">
+
+                <div class="illustration-paper">
+
+                    <div class="paper-line"></div>
+                    <div class="paper-line short"></div>
+                    <div class="paper-line"></div>
+
+                    <div class="paper-check">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12.5L9.5 17L19 7.5" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="illustration-pencil">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 20L5.2 15.3L16.8 3.7C17.6 2.9 18.9 2.9 19.7 3.7L20.3 4.3C21.1 5.1 21.1 6.4 20.3 7.2L8.7 18.8L4 20Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+
+                        <path d="M14.8 5.7L18.3 9.2" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--  ADD TASK -->
+        <section class="task-input-section">
+
+            <form id="todo-form" class="todo-form">
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </span>
+
+                    <input type="text" id="new-todo" name="title" placeholder="What would you like to accomplish?"
+                        autocomplete="off" required maxlength="120">
+
+                </div>
+
+                <button type="submit" id="add-btn" class="primary-button">
+                    <span aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </span>
+
+                    Add Task
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="stats-grid" aria-label="Task statistics">
+
+            <article class="stat-card stat-total">
+
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7 3H17C18.1046 3 19 3.89543 19 5V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3Z"
+                            stroke="currentColor" stroke-width="1.7" />
+
+                        <path d="M8.5 8H15.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+
+                        <path d="M8.5 12H15.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+
+                        <path d="M8.5 16H12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="stat-content">
+                    <span class="stat-label">Total Tasks</span>
+                    <strong id="total-count">0</strong>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card stat-active">
+
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7" />
+
+                        <path d="M12 8V12L14.5 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <div class="stat-content">
+                    <span class="stat-label">Active</span>
+                    <strong id="active-count">0</strong>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card stat-completed">
+
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7" />
+
+                        <path d="M7.8 12.2L10.6 15L16.5 9" stroke="currentColor" stroke-width="1.9"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <div class="stat-content">
+                    <span class="stat-label">Completed</span>
+                    <strong id="completed-count">0</strong>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card stat-progress">
+
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 17L9 12L13 15L20 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+
+                        <path d="M16 7H20V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <div class="stat-content">
+                    <span class="stat-label">Progress</span>
+                    <strong id="progress-count">0%</strong>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- TODO HEADER -->
+        <section class="todo-section">
+
+            <div class="todo-header">
+
+                <div>
+                    <span class="section-eyebrow">YOUR TASKS</span>
+
+                    <h2>
+                        Today's To-Do List
+                    </h2>
+                </div>
+
+                <div class="task-count-badge">
+                    <span id="visible-count">0</span>
+                    <span>tasks</span>
+                </div>
+
+            </div>
+
+
+            <!-- FILTERS -->
+            <div class="todo-controls">
+
+                <div class="filter-buttons" role="group" aria-label="Filter tasks">
+
+                    <button type="button" class="filter-button active" data-filter="all">
+                        All
+                    </button>
+
+                    <button type="button" class="filter-button" data-filter="active">
+                        Active
+                    </button>
+
+                    <button type="button" class="filter-button" data-filter="completed">
+                        Completed
+                    </button>
+
+                </div>
+
+                <button type="button" id="clear-completed" class="text-button">
+                    Clear completed
+                </button>
+
+            </div>
+
+
+            <!-- TODO LIST -->
+            <ul id="todo-list" class="todo-list" aria-live="polite">
+
+                <!-- Todo items will be generated by JavaScript. -->
+
+            </ul>
+        </section>
+
+
+        <!-- PRODUCTIVITY MESSAGE -->
+        <section class="productivity-card">
+
+            <div class="productivity-icon" aria-hidden="true">
+
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L13.8 9.2L20 11L13.8 12.8L12 19L10.2 12.8L4 11L10.2 9.2L12 3Z" stroke="currentColor"
+                        stroke-width="1.7" stroke-linejoin="round" />
+                </svg>
+
+            </div>
+
+            <div class="productivity-content">
+
+                <h3>Small steps, big progress.</h3>
+
+                <p>
+                    Every completed task is one step closer to your goals.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="app-footer">
+
+            <p>
+                &copy; 2026 Yasmin Sherefa. All rights reserved .
+            </p>
+
+            <span class="footer-dot"></span>
+
+            <p>
+                Stay focused✨. Keep moving💜.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
